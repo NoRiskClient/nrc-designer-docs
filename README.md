@@ -28,9 +28,14 @@ Die Designer-Assets werden bei jedem Update **automatisch** als Release veröffe
 │   └── nrc-cosmetics/          ← Source-Ordner, wird vom Workflow gezippt
 ├── assets/
 │   └── nrc_default_emote_model.bbmodel
+├── wiki/                       ← Wiki-Pages (Home, _Sidebar, Kapitel 01-12, images)
+│                                  wird automatisch ins .wiki.git gespiegelt
 └── .github/workflows/
-    └── release.yml             ← zippt + publisht bei jedem push auf main
+    ├── release.yml             ← zippt designer/ + bbmodel → Release "latest"
+    └── sync-wiki.yml           ← pusht wiki/ → <repo>.wiki.git
 ```
+
+> 💡 **Ein Branch, ein Remote.** Alle Änderungen (Doku ODER Assets) gehen auf `main` in diesem Repo. Die zwei Workflows kümmern sich um Release + Wiki-Sync.
 
 ### Quick-Links
 

@@ -1,0 +1,1 @@
+**NRC Designer Doc** · by **Tinus aka. p2pe** ❤️ · [GitHub Repo](https://github.com/NoRiskClient/nrc-designer-docs) · Fragen? → [Discord-Ticket erstellen](https://discord.com/channels/774271756549619722)

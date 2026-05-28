@@ -1,6 +1,7 @@
 ### 📖 NRC Designer Doc
 
 **[🏠 Home](Home)**
+**[🚀 Quickstart](00-Quickstart)** ← *neu hier?*
 **[📦 GitHub Repo](https://github.com/NoRiskClient/nrc-designer-docs)**
 
 ---

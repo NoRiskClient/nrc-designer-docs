@@ -1,0 +1,137 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 5,
+				"visible_bounds_height": 5,
+				"visible_bounds_offset": [0, 2, 0]
+			},
+			"bones": [
+				{
+					"name": "bipedRig",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "bipedHead",
+					"parent": "bipedRig",
+					"pivot": [0, 24, 0]
+				},
+				{
+					"name": "bipedBody",
+					"parent": "bipedRig",
+					"pivot": [0, 24, 0]
+				},
+				{
+					"name": "bipedRightArm",
+					"parent": "bipedRig",
+					"pivot": [-4, 22, 0]
+				},
+				{
+					"name": "bipedLeftArm",
+					"parent": "bipedRig",
+					"pivot": [4, 22, 0]
+				},
+				{
+					"name": "bipedRightLeg",
+					"parent": "bipedRig",
+					"pivot": [-2, 12, 0]
+				},
+				{
+					"name": "bipedLeftLeg",
+					"parent": "bipedRig",
+					"pivot": [2, 12, 0]
+				},
+				{
+					"name": "buff_axolotl",
+					"parent": "bipedRig",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "axolotl_body",
+					"parent": "buff_axolotl",
+					"pivot": [0, 31, 0],
+					"cubes": [
+						{"origin": [-11, 28, -6], "size": [22, 14, 10], "uv": [0, 0]},
+						{"origin": [-7.5, 19, -4], "size": [15, 9, 6], "uv": [36, 56]},
+						{"origin": [0, 10, 2], "size": [0, 18, 21], "uv": [0, 3]}
+					]
+				},
+				{
+					"name": "axolotl_head",
+					"parent": "axolotl_body",
+					"pivot": [0, 42, 0],
+					"cubes": [
+						{"origin": [-4, 42, -4], "size": [8, 5, 5], "uv": [72, 48]}
+					]
+				},
+				{
+					"name": "right_gills",
+					"parent": "axolotl_head",
+					"pivot": [-4, 44, 0],
+					"cubes": [
+						{"origin": [-7, 42, 0], "size": [3, 7, 0], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "left_gills",
+					"parent": "axolotl_head",
+					"pivot": [4, 44, 0],
+					"cubes": [
+						{"origin": [4, 42, 0], "size": [3, 7, 0], "uv": [42, 24]}
+					]
+				},
+				{
+					"name": "top_gills",
+					"parent": "axolotl_head",
+					"pivot": [0, 47, 0],
+					"cubes": [
+						{"origin": [-4, 47, 0], "size": [8, 3, 0], "uv": [0, 42]}
+					]
+				},
+				{
+					"name": "axolotl_arm0",
+					"parent": "axolotl_body",
+					"pivot": [0, 41, 0],
+					"cubes": [
+						{"origin": [-19, 36, -4.5], "size": [8, 8, 7], "uv": [57, 17]},
+						{"origin": [-20, 22, -5.5], "size": [9, 14, 9], "uv": [33, 33]},
+						{"origin": [-18, 13, -4.5], "size": [7, 9, 7], "uv": [69, 32]}
+					]
+				},
+				{
+					"name": "axolotl_arm1",
+					"parent": "axolotl_body",
+					"pivot": [0, 41, 0],
+					"cubes": [
+						{"origin": [11, 36, -4.5], "size": [8, 8, 7], "uv": [64, 0]},
+						{"origin": [11, 22, -5.5], "size": [9, 14, 9], "uv": [0, 47]},
+						{"origin": [11, 13, -4.5], "size": [7, 9, 7], "uv": [0, 70]}
+					]
+				},
+				{
+					"name": "axolotl_leg0",
+					"parent": "buff_axolotl",
+					"pivot": [-4, 18, 0],
+					"cubes": [
+						{"origin": [-9, 11, -3.5], "size": [7, 9, 5], "uv": [28, 71]},
+						{"origin": [-8, 0, -3], "size": [5, 11, 4], "uv": [76, 67]}
+					]
+				},
+				{
+					"name": "axolotl_leg1",
+					"parent": "buff_axolotl",
+					"pivot": [5, 18, 0],
+					"mirror": true,
+					"cubes": [
+						{"origin": [2, 11, -3.5], "size": [7, 9, 5], "uv": [52, 71], "mirror": false},
+						{"origin": [3, 0, -3], "size": [5, 11, 4], "uv": [72, 82], "mirror": false}
+					]
+				}
+			]
+		}
+	]
+}

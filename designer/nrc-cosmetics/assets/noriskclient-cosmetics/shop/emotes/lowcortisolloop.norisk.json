@@ -1,0 +1,15 @@
+{
+  "id": "d3c44b5c-ecb7-4d3a-a06d-3fcdb76b9cb5",
+  "price": 9999,
+  "rarity": "UNCOMMON",
+  "name": "Low Cortisol",
+  "creator": "Tinus",
+  "emoteFile": "lowcortisolloop.animation.json",
+  "dateAdded": "2025-08-01",
+  "category": "DANCE",
+  "overflow" : {
+     "overflowInShop": true
+  },
+  "isExclusive": false
+  
+}

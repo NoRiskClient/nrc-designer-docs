@@ -1,0 +1,43 @@
+{
+    "id": "b1bea8dd-2318-40ab-9f75-1b4f6d9998e3",
+    "name": "Pan Wings",
+    "creator": "Tinus",
+    "price": 0,
+    "type": "WINGS",
+    "path": "pan_wings",
+    "overflow": {
+        "overflowInShop": true
+    },
+    "variant": {
+    "parentId":"09b500b2-1c76-4835-8422-5a9e9daf8d7a"
+  },
+    "defaultSettings": {
+        "color": null,
+        "scale": 1.0,
+        "previewScale": 2.1,
+        "offset": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+        },
+        "previewOffset": {
+            "x": 0.07,
+            "y": -0.65,
+            "z": 0.0
+        },
+        "adjustRotationWhenSwimmingOrFlying": false,
+        "adjustPositionWhenSkeaking": false,
+        "sneakingPositionOffset": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+        },
+        "renderMode": null,
+        "hash": null
+    },
+    "layers": [],
+    "features": [],
+    "compatibleCosmetics": [],
+    "rarity": "UNCOMMON",
+    "isExclusive": false
+}

@@ -1,0 +1,8 @@
+{
+  "cancelledMixinPackages": [
+  ],
+  "cancelledMixinClassNames": [
+    "com.vladmarica.betterpingdisplay.mixin",
+    "soul.software.medal.mixins"
+  ]
+}

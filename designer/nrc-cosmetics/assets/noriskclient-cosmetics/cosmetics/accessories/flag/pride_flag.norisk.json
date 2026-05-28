@@ -1,0 +1,40 @@
+{
+    "id": "994873e3-b352-481c-bd68-2c7d76a873de",
+    "name": "Pride Flag",
+    "creator": "Tinus",
+    "price": 500,
+    "type": "ACCESSORIES",
+    "path": "pride_flag",
+    "overflow": {
+        "overflowInShop": true
+    },
+    "defaultSettings": {
+        "color": null,
+        "scale": 1.1,
+        "previewScale": 2.9,
+        "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0.0
+        },
+        "previewOffset": {
+            "x": 0.4,
+            "y": -1.0,
+            "z": 0.0
+        },
+        "adjustRotationWhenSwimmingOrFlying": false,
+        "adjustPositionWhenSkeaking": true,
+        "sneakingPositionOffset": {	
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+        },
+        "renderMode": "ORIGINAL",
+        "hash": null
+    },
+    "layers": [],
+    "features": [],
+    "compatibleCosmetics": [],
+    "rarity": "UNCOMMON",
+    "isExclusive": false
+}

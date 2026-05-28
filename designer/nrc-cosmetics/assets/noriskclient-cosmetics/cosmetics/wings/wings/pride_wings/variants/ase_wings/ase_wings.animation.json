@@ -1,0 +1,125 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"nrc.idle": {
+			"loop": "hold_on_last_frame",
+			"bones": {
+				"Wings": {
+					"position": {
+						"vector": [0, 1, 0]
+					}
+				},
+				"1w": {
+					"rotation": {
+						"vector": [0, "30 - Math.cos((query.anim_time - 0) * 100) * 19.5", 0]
+					},
+					"position": {
+						"vector": [0, 1, -5]
+					},
+					"scale": {
+						"vector": [0.8, 0.8, 0.8]
+					}
+				},
+				"1e": {
+					"rotation": {
+						"vector": [0, "-30 + Math.cos((query.anim_time - 0) * 100) * 19.5", 0]
+					},
+					"position": {
+						"vector": [0, 1, -5]
+					},
+					"scale": {
+						"vector": [0.8, 0.8, 0.8]
+					}
+				},
+				"5e": {
+					"rotation": {
+						"vector": [0, "-30 + Math.cos((query.anim_time - 0.3) * 100) * 16", 0]
+					},
+					"position": {
+						"vector": [0, 1, -5]
+					},
+					"scale": {
+						"vector": [0.8, 0.8, 0.8]
+					}
+				},
+				"5w": {
+					"rotation": {
+						"vector": [0, "30 - Math.cos((query.anim_time - 0.3) * 100) * 16", 0]
+					},
+					"position": {
+						"vector": [0, 1, -5]
+					},
+					"scale": {
+						"vector": [0.8, 0.8, 0.8]
+					}
+				},
+				"4e": {
+					"rotation": {
+						"vector": [0, "-30 + Math.cos((query.anim_time - 0.225) * 100) * 17", 0]
+					},
+					"position": {
+						"vector": [0, 1, -5]
+					},
+					"scale": {
+						"vector": [0.8, 0.8, 0.8]
+					}
+				},
+				"4w": {
+					"rotation": {
+						"vector": [0, "30 - Math.cos((query.anim_time - 0.225) * 100) * 17", 0]
+					},
+					"position": {
+						"vector": [0, 1, -5]
+					},
+					"scale": {
+						"vector": [0.8, 0.8, 0.8]
+					}
+				},
+				"3e": {
+					"rotation": {
+						"vector": [0, "-30 + Math.cos((query.anim_time - 0.15) * 100) * 18", 0]
+					},
+					"position": {
+						"vector": [0, 1, -5]
+					},
+					"scale": {
+						"vector": [0.8, 0.8, 0.8]
+					}
+				},
+				"3w": {
+					"rotation": {
+						"vector": [0, "30 - Math.cos((query.anim_time - 0.15) * 100) * 18", 0]
+					},
+					"position": {
+						"vector": [0, 1, -5]
+					},
+					"scale": {
+						"vector": [0.8, 0.8, 0.8]
+					}
+				},
+				"2w": {
+					"rotation": {
+						"vector": [0, "30 - Math.cos((query.anim_time - 0.075) * 100) * 19", 0]
+					},
+					"position": {
+						"vector": [0, 1, -5]
+					},
+					"scale": {
+						"vector": [0.8, 0.8, 0.8]
+					}
+				},
+				"2e": {
+					"rotation": {
+						"vector": [0, "-30 + Math.cos((query.anim_time - 0.075) * 100) * 19", 0]
+					},
+					"position": {
+						"vector": [0, 1, -5]
+					},
+					"scale": {
+						"vector": [0.8, 0.8, 0.8]
+					}
+				}
+			}
+		}
+	}
+}

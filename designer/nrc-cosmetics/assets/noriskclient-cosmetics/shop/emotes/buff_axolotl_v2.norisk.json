@@ -1,0 +1,15 @@
+{
+  "id": "cb5abbb1-983c-467d-a61b-1f72f8dee134",
+  "price": 999,
+  "rarity": "EPIC",
+  "name": "Buff Axolotl",
+  "creator": "Tinus",
+  "emoteFile": "buff_axolotl_v2/buff_axolotl_v2.animation.json",
+  "dateAdded": "2025-08-01",
+  "category": "SPECIAL",
+  "overflow" : {
+     "overflowInShop": true
+  },
+  "isExclusive": false
+  
+}

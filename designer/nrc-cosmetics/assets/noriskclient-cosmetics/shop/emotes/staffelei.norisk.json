@@ -1,0 +1,15 @@
+{
+  "id": "1ad774e3-5241-46fb-8b4a-8cbfdd035a49",
+  "price": 1,
+  "rarity": "LEGENDARY",
+  "name": "Staffelei",
+  "creator": "Tinus",
+  "emoteFile": "staffelei/staffelei.animation.json",
+  "dateAdded": "2025-08-01",
+  "category": "SPECIAL",
+  "overflow" : {
+     "overflowInShop": true
+  },
+  "isExclusive": false
+  
+}

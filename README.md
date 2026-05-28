@@ -6,7 +6,31 @@ Komplette Doku zum Erstellen eigener **Emotes** & **Cosmetics** für **NoRiskCli
 
 ## 📖 → [Zum Wiki](https://github.com/NoRiskClient/nrc-designer-docs/wiki)
 
-Alle Inhalte (12 Kapitel, Screenshots, Beispiel-GIFs, Template-Download) liegen im Wiki dieses Repos.
+Alle Inhalte (12 Kapitel, Screenshots, Beispiel-GIFs) liegen im Wiki dieses Repos.
+
+## 📥 Downloads
+
+Die Designer-Assets werden bei jedem Update **automatisch** als Release veröffentlicht (rolling `latest`-Tag):
+
+| Datei | Direkt-Download |
+|-------|-----------------|
+| **Blockbench-Template** | [⬇ nrc_default_emote_model.bbmodel](https://github.com/NoRiskClient/nrc-designer-docs/releases/latest/download/nrc_default_emote_model.bbmodel) |
+| **Designer-Ordner (zum Testen)** | [⬇ nrc-cosmetics.zip](https://github.com/NoRiskClient/nrc-designer-docs/releases/latest/download/nrc-cosmetics.zip) |
+
+🔖 Alle Versionen: https://github.com/NoRiskClient/nrc-designer-docs/releases
+
+## Repo-Struktur
+
+```
+.
+├── README.md
+├── designer/
+│   └── nrc-cosmetics/          ← Source-Ordner, wird vom Workflow gezippt
+├── assets/
+│   └── nrc_default_emote_model.bbmodel
+└── .github/workflows/
+    └── release.yml             ← zippt + publisht bei jedem push auf main
+```
 
 ### Quick-Links
 

@@ -1,0 +1,51 @@
+name: Build & publish designer assets
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'designer/**'
+      - 'assets/nrc_default_emote_model.bbmodel'
+      - '.github/workflows/release.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Zip + upload to rolling "latest" release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Zip designer/nrc-cosmetics → nrc-cosmetics.zip
+        run: |
+          cd designer
+          zip -r ../nrc-cosmetics.zip nrc-cosmetics
+          cd ..
+          ls -la nrc-cosmetics.zip
+
+      - name: Publish to rolling "latest" release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: Latest Designer Assets
+          body: |
+            **Automatisch generiert** aus dem aktuellen Stand von `main`.
+
+            Letztes Update: `${{ github.sha }}`
+
+            ## Assets
+
+            - **`nrc-cosmetics.zip`** — Designer-Template-Ordner. ZIP entpacken und den `nrc-cosmetics/` Folder nach `NoRiskClient/designer/` kopieren.
+            - **`nrc_default_emote_model.bbmodel`** — Blockbench-Template (erst nach GeckoLib-Plugin-Install öffnen).
+
+            ## Doku
+
+            📖 Vollständige Anleitung im [Wiki](https://github.com/NoRiskClient/nrc-designer-docs/wiki).
+          make_latest: 'true'
+          files: |
+            nrc-cosmetics.zip
+            assets/nrc_default_emote_model.bbmodel

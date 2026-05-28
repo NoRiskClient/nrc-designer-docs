@@ -29,7 +29,7 @@ Erster Emote ingame in 5 Minuten. Keine Theorie — wenn du verstehen willst **w
 
 **File → Export → Export GeckoLib Animations** → speichern als `meinerstemote.animation.json`.
 
-## 5. Ingame einbauen
+## 5. Ingame abspielen
 
 **Einmalig:** [nrc-cosmetics.zip](https://github.com/NoRiskClient/nrc-designer-docs/releases/latest/download/nrc-cosmetics.zip) entpacken, Ordner `nrc-cosmetics/` nach `<MC-Ordner>/NoRiskClient/designer/` kopieren.
 
@@ -37,28 +37,6 @@ Erster Emote ingame in 5 Minuten. Keine Theorie — wenn du verstehen willst **w
 ```
 NoRiskClient/designer/nrc-cosmetics/assets/noriskclient-cosmetics/emotes/
 ```
-
-**`.norisk.json`** daneben anlegen in:
-```
-NoRiskClient/designer/nrc-cosmetics/assets/noriskclient-cosmetics/shop/emotes/meinerstemote.norisk.json
-```
-
-```json
-{
-  "id": "ERSETZEMICH-AAAA-BBBB-CCCC-DDDDDDDDDDDD",
-  "price": 0,
-  "rarity": "COMMON",
-  "name": "Mein erster Emote",
-  "creator": "dein name",
-  "emoteFile": "meinerstemote.animation.json",
-  "dateAdded": "2026-01-01",
-  "category": "FUNNY",
-  "overflow": { "overflowInShop": true },
-  "isExclusive": false
-}
-```
-
-`id` ersetzen mit eigener UUID → [Generator](https://www.uuidgenerator.net/).
 
 **Minecraft starten, dann Chat:**
 ```
@@ -68,6 +46,8 @@ NoRiskClient/designer/nrc-cosmetics/assets/noriskclient-cosmetics/shop/emotes/me
 
 Fertig.
 
+> Eine `.norisk.json` brauchst du **nur** wenn der Emote auch im Shop auftauchen soll — fürs lokale Abspielen reicht die Animation-Datei. Details in [11. Test-Setup](11-Test-Setup).
+
 ---
 
 ## Geht nicht?
@@ -75,7 +55,7 @@ Fertig.
 | Problem | Lösung |
 |---------|--------|
 | Command `designer source` existiert nicht | Keine Designer-Permission → [Discord-Ticket](https://discord.com/channels/774271756549619722) |
-| Emote zeigt nicht | UUID in JSON ersetzt? `emoteFile` passt zum Dateinamen? |
+| `emote play` findet Datei nicht | Animation-Name im Command muss zum Dateinamen passen (ohne `.animation.json`) |
 | Crash beim Template öffnen | GeckoLib nicht installiert — Blockbench neu starten |
 
 ---

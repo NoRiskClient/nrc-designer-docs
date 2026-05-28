@@ -8,11 +8,9 @@ Wenn ihr offene Fragen habt oder allgemein was wissen wollt, könnt ihr auch ger
 
 ---
 
-## 🚀 Komplett neu hier?
+## Komplett neu hier?
 
-> **[→ Zum Quickstart in 5 Minuten](00-Quickstart)** — Erster Emote ingame, ohne Theorie, ohne Vorwissen. Wirklich. Jedes Kind checkt's.
-
-Wenn du danach mehr willst, geht's mit den Kapiteln unten weiter.
+→ **[Quickstart](00-Quickstart)** — erster Emote ingame in 5 Minuten, ohne Theorie. Danach kannst du mit den Kapiteln unten tiefer einsteigen.
 
 ---
 

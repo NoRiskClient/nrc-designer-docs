@@ -1,0 +1,52 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"holding_head": {
+			"loop": "hold_on_last_frame",
+			"bones": {
+				"bipedHead": {
+					"position": {
+						"vector": [12, "-8 + Math.cos(query.anim_time * 100) * 1 -1", 0]
+					}
+				},
+				"bipedBody": {
+					"rotation": {
+						"vector": [-7.5937, -19.607, -15.08017]
+					},
+					"position": {
+						"vector": [-3.5, 0, 2]
+					}
+				},
+				"bipedRightArm": {
+					"rotation": {
+						"vector": [0, -17.5, "0 + Math.cos((query.anim_time - 0.5) * 100) * -5"]
+					},
+					"position": {
+						"vector": [-3, -2, 0]
+					}
+				},
+				"bipedLeftArm": {
+					"rotation": {
+						"vector": [-20, 0, "-92.5 + Math.cos(query.anim_time * 100) * -5"]
+					},
+					"position": {
+						"vector": [-1, "1 + Math.cos(query.anim_time * 100) * 0.5 -0.5", 3]
+					}
+				},
+				"bipedLeftLeg": {
+					"rotation": {
+						"vector": ["31.0572090208 - Math.cos(query.anim_time * 100) * -3", -34.09446, "7.4183700862  + Math.cos(query.anim_time * 100) * -1"]
+					},
+					"position": {
+						"vector": [2, "-1 + Math.cos(query.anim_time * 100) * 0.1 -0.1", 0]
+					}
+				},
+				"bipedRightLeg": {
+					"rotation": {
+						"vector": [0, -12.5, 0]
+					}
+				}
+			}
+		}
+	}
+}

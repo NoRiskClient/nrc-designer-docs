@@ -1,0 +1,63 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"spin": {
+			"loop": true,
+			"bones": {
+				"bipedRig": {
+					"rotation": {
+						"vector": ["-0 - query.anim_time * -360 * 0.75", 0, "0 + query.anim_time * -360 * 0.1"]
+					},
+					"position": {
+						"vector": [0, 24, 0]
+					}
+				},
+				"bipedHead": {
+					"rotation": {
+						"vector": [25, 0, 0]
+					},
+					"position": {
+						"vector": [0, -13, 0]
+					}
+				},
+				"bipedBody": {
+					"position": {
+						"vector": [0, -13, 0]
+					}
+				},
+				"bipedRightArm": {
+					"rotation": {
+						"vector": [-38.66901, -11.14485, -13.57875]
+					},
+					"position": {
+						"vector": [0, -14, 0]
+					}
+				},
+				"bipedLeftArm": {
+					"rotation": {
+						"vector": [-45.23502, 16.3882, 15.63367]
+					},
+					"position": {
+						"vector": [0, -14, 0]
+					}
+				},
+				"bipedLeftLeg": {
+					"rotation": {
+						"vector": [7.47178, 0.65182, -4.95744]
+					},
+					"position": {
+						"vector": [-0.5, -3.75, -4.25]
+					}
+				},
+				"bipedRightLeg": {
+					"rotation": {
+						"vector": [14.94548, -1.29256, 4.83045]
+					},
+					"position": {
+						"vector": [0.75, -4.25, -4]
+					}
+				}
+			}
+		}
+	}
+}

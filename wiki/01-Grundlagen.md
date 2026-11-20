@@ -1,43 +1,91 @@
 # 1. Grundlagen
 
-← [Home](Home) · **1 / 12** · [Aufbau →](02-Aufbau)
+← [Home](Home) · **1 / 15** · [Aufbau →](02-Aufbau)
 
 ---
 
-Bevor du loslegst, brauchst du eine funktionierende Blockbench-Installation mit dem **GeckoLib-Plugin** und unserem **NRC Default Template**. Diese drei Dinge bilden die Basis für *alles* was danach kommt.
+Bevor du loslegst, brauchst du **Blockbench** und unser eigenes Plugin **NoRisk Client Cosmetics**. Das Plugin bringt das Spieler-Rig, die Emote-Einstellungen und den Export mit — ein extra Template oder GeckoLib brauchst du nicht mehr.
 
 ## Blockbench
 
-Blockbench ist ein kostenloses Open-Source 3D-Modeling-Programm, welches unter anderem auch von Minecraft selber benutzt wird. Du kannst es entweder als **WebApp** (nicht zu empfehlen) oder als **Desktop-Programm** nutzen.
+Blockbench ist ein kostenloses Open-Source 3D-Modeling-Programm, das unter anderem auch von Minecraft selbst benutzt wird. Nimm die **Desktop-Version** — in der WebApp kann das Plugin keine Ordner schreiben, Texturen und Sounds werden dort nicht exportiert.
 
 🔗 https://www.blockbench.net/
 
-## GeckoLib
+> ℹ️ Das Plugin braucht mindestens **Blockbench 4.11**.
 
-GeckoLib ist ein Plugin für Blockbench und wir nutzen es um unsere Cosmetics & Emotes zu erstellen und zu exportieren. Um es zu installieren:
+## NRC-Plugin installieren
 
 1. Öffne Blockbench
 2. Oben in der Menüleiste auf **File → Plugins**
-3. Suche nach **GeckoLib Models & Animations**
-4. Klick auf **Install**
+3. Oben rechts im Plugin-Fenster auf **Load Plugin from URL** (Wolken-Symbol)
+4. Diesen Link einfügen und bestätigen:
 
-![GeckoLib Plugin suchen](images/image-0.png)
+```
+https://raw.githubusercontent.com/NoRiskClient/nrc-blockbench-plugins/master/plugins/nrc_cosmetics/nrc_cosmetics.js
+```
 
-![GeckoLib Plugin installieren](images/image-1.png)
+5. Fragt Blockbench nach Berechtigungen (Dateisystem, Netzwerk): **erlauben** — das Plugin braucht sie für Export, Import, Vorlagen und Skin-Vorschau.
 
-## NRC Default Model
+![Plugin-Fenster mit „Load Plugin from URL“](images/plugin-install-url.png)
 
-Um den ganzen Prozess zu beschleunigen, haben wir ein Template zum Erstellen von Cosmetics und Emotes vorbereitet. Du findest es ebenfalls in unserem Discord unter dem **FAQ-Channel**.
+Danach taucht **NoRisk Client Cosmetics** in der Liste der installierten Plugins auf.
 
-📦 **Template-Download:** **[⬇ nrc_default_emote_model.bbmodel](https://github.com/NoRiskClient/nrc-designer-docs/releases/latest/download/nrc_default_emote_model.bbmodel)**
-💬 **Discord:** https://discord.com/channels/774271756549619722/774292827524956181/1295402520226828318
+![Installiertes Plugin in der Plugin-Liste](images/plugin-installed.png)
 
-> 💡 Aus dem Release `latest` — wird bei jeder Änderung am Template **automatisch** neu gebaut. Alle Versionen: [Releases](https://github.com/NoRiskClient/nrc-designer-docs/releases).
+> 💡 **Updates:** Ein über URL geladenes Plugin holt sich Blockbench beim Start neu. Willst du sichergehen, dass du die neueste Version hast: Blockbench neu starten.
 
-> ⚠️ **Wichtig:** Öffne das Template **erst nach** der Installation von GeckoLib — sonst funktioniert es nicht. Zudem sollte **nichts am Base Model verändert** werden, da es sonst zu Komplikationen kommt.
+## Neues Projekt
 
-![NRC Default Model in Blockbench](images/image-2.png)
+Über **File → New** (oder den Startbildschirm) gibt es jetzt zwei neue Formate:
+
+| Format | Wofür |
+|--------|-------|
+| **NoRisk Client Emote** | Emotes — mit Vorlagen-Auswahl |
+| **NoRisk Client Cosmetic** | Cosmetics — startet direkt mit der Animation `nrc.idle` |
+
+![File → New mit den zwei NRC-Formaten](images/plugin-new-project.png)
+
+### Vorlagen für Emotes
+
+Bei **NoRisk Client Emote** öffnet sich eine Auswahl: **Blank Emote** für einen leeren Start oder eine der Vorlagen. Die Vorlagen sind die Emotes aus unserem [Designer-Ordner](https://github.com/NoRiskClient/nrc-designer-docs/releases/latest/download/nrc-cosmetics.zip) und werden mit **Live-Vorschau** angezeigt. Mit **↻** lädst du die neueste Version herunter.
+
+Danach gibst du deinem Emote einen Namen (nur Kleinbuchstaben, Ziffern, `_`, `-`, `.`).
+
+![Vorlagen-Dialog „New NoRisk Client Emote“](images/plugin-template-picker.png)
+
+![Namen vergeben](images/plugin-name-dialog.png)
+
+### Das Spieler-Rig
+
+Jedes Projekt startet mit dem Spieler-Rig: `bipedRig` mit Kopf, Körper, Armen, Beinen und allen `armor`-Knochen. Was die Knochen bedeuten, steht in [2. Aufbau](02-Aufbau).
+
+- Die Cubes des Rigs sind nur zur **Orientierung** — exportiert werden **nur deine eigenen** Cubes.
+- **Edit → Protect Player Rig** sperrt die Rig-Cubes, damit du sie nicht aus Versehen verschiebst.
+
+![Frisches Emote-Projekt mit Rig und Outliner](images/plugin-rig.png)
+
+### Vorschau mit deinem Skin
+
+Rechtsklick in die Vorschau:
+
+| Eintrag | Was passiert |
+|---------|--------------|
+| **Set Preview Skin** | Minecraft-Namen eingeben oder PNG wählen → das Rig trägt diesen Skin |
+| **Toggle Skin Preview** | Skin an/aus (aus = farbige Marker-Cubes) |
+| **Toggle Skin Second Layer** | Zweite Skin-Ebene (Hut, Jacke, Ärmel, Hose) an/aus |
+| **Toggle Slim Arms** | Zwischen breitem (Steve) und schmalem (Alex) Modell wechseln |
+
+![Rechtsklick in die Vorschau: Skin-Optionen des Plugins](images/plugin-skin-preview.png)
 
 ---
 
-← [Home](Home) · **1 / 12** · [Aufbau →](02-Aufbau)
+## Altes Template (nicht mehr nötig)
+
+Früher lief alles über das **NRC Default Template** + **GeckoLib-Plugin**. Das brauchst du nicht mehr. Fertige Emote-/Cosmetic-Ordner (mit `.animation.json`, `.geo.json`, `.png` …) kannst du über **File → Import → Import NoRisk Client Emote / Cosmetic** ins neue Format holen → [15. Blockbench-Plugin](15-Blockbench-Plugin#import).
+
+Das alte Template liegt aus Kompatibilitätsgründen weiter im [Release](https://github.com/NoRiskClient/nrc-designer-docs/releases/latest/download/nrc_default_emote_model.bbmodel).
+
+---
+
+← [Home](Home) · **1 / 15** · [Aufbau →](02-Aufbau)

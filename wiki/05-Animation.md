@@ -1,6 +1,6 @@
 # 5. Animation
 
-← [Texture](04-Texture) · **5 / 12** · [Keyframes →](06-Keyframes)
+← [Texture](04-Texture) · **5 / 15** · [Keyframes →](06-Keyframes)
 
 ---
 
@@ -8,9 +8,43 @@ Bei der Animation beginnt der Spaß erst so richtig.
 
 ## Animation erstellen
 
-Zuerst erstellst du eine Animation. Bei **Emotes** ist der **Name egal** — wenn es jedoch ein **Cosmetic** ist, **muss** sie `nrc.idle` heißen.
+Das Plugin legt die erste Animation schon für dich an:
+
+- **Emote:** die Animation heißt wie dein Emote (z.B. `meinerstemote`).
+- **Cosmetic:** die Animation heißt `nrc.idle` und steht auf **Loop**.
+
+Weitere Animationen legst du im **Animate**-Modus links über **+** an.
 
 ![Animation erstellen](images/image-11.png)
+
+> 💡 Emote umbenennen? **File → Rename NoRisk Client Emote** ändert Projekt, Animation und alle Sound-IDs auf einmal.
+
+## Emote-Einstellungen
+
+Bei Emotes stellst du über **Animation → Edit NoRisk Client Emote Settings** ein, wie sich das Emote ingame verhält — z.B. ob es beim Laufen abbricht oder in der Ego-Perspektive sichtbar ist. Die gleichen Schalter findest du nochmal im [Export-Dialog](10-Export). Was jeder Schalter macht: [14. Referenz](14-Referenz#extra-einstellungen-in-der-animationjson-emotes).
+
+![Dialog „NRC NoRisk Client Emote Settings“](images/plugin-emote-settings.png)
+
+## Animationsnamen für Cosmetics
+
+`nrc.idle` ist **Pflicht**. Zusätzlich kannst du Animationen für bestimmte Situationen anlegen — der Client spielt sie automatisch ab, sobald der Spieler das Passende tut:
+
+| Animation | Wird gespielt, wenn der Spieler … |
+|-----------|-----------------------------------|
+| `nrc.crawling` | kriecht |
+| `nrc.swimming` | schwimmt |
+| `nrc.flying` | mit der Elytra fliegt |
+| `nrc.sneaking` | schleicht |
+| `nrc.walking` | läuft |
+| `nrc.quirk_1` … `nrc.quirk_4` | still steht — zufällige Extra-Animation zwischendurch |
+| `nrc.idle` | nichts von alledem tut |
+| `nrc.shop` | im Shop als Vorschau gezeigt wird (optional, sonst `nrc.idle`) |
+
+Die Liste (ohne `nrc.shop`) ist gleichzeitig die **Reihenfolge**: trifft mehreres zu, gewinnt das obere. Fehlt eine Animation, wird sie einfach übersprungen — am Ende landet der Client immer bei `nrc.idle`.
+
+> ℹ️ [Buddys](13-Cosmetic-Typen#buddys) kennen zusätzliche Animationen (`nrc.running`, `nrc.sitting`, `nrc.afk`, `nrc.jumping`, `nrc.falling`, `nrc.swimmidle`). Bei allen anderen Cosmetics werden diese **nicht** abgespielt.
+
+> 💡 Welcher Quirk wie oft und in welchem Abstand kommt, stellst du in der `.norisk.json` unter `animationSettings` ein → [Referenz](14-Referenz#quirks-animationsettings).
 
 ## Loop-Modi
 
@@ -36,4 +70,4 @@ Die **blaue Klammer** schreibt das Ende der Animation vor. Du kannst sie demnach
 
 ---
 
-← [Texture](04-Texture) · **5 / 12** · [Keyframes →](06-Keyframes)
+← [Texture](04-Texture) · **5 / 15** · [Keyframes →](06-Keyframes)

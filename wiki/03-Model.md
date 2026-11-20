@@ -1,6 +1,6 @@
 # 3. Model
 
-← [Aufbau](02-Aufbau) · **3 / 12** · [Texture →](04-Texture)
+← [Aufbau](02-Aufbau) · **3 / 15** · [Texture →](04-Texture)
 
 ---
 
@@ -22,4 +22,4 @@ Bewege überlappende UVs einfach **ganz leicht um 0.25** in eine andere Richtung
 
 ---
 
-← [Aufbau](02-Aufbau) · **3 / 12** · [Texture →](04-Texture)
+← [Aufbau](02-Aufbau) · **3 / 15** · [Texture →](04-Texture)

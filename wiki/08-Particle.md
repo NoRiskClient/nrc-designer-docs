@@ -1,6 +1,6 @@
 # 8. Particle
 
-← [Molang](07-Molang) · **8 / 12** · [Sound →](09-Sound)
+← [Molang](07-Molang) · **8 / 15** · [Sound →](09-Sound)
 
 ---
 
@@ -8,38 +8,54 @@ Für Particle nutzen wir **Snowstorm**. Das Tool kannst du entweder als **WebApp
 
 🔗 https://snowstorm.app/
 
-> 💾 Speichere die fertigen Particle **immer zusammen mit ihrer Textur** ab.
+> 💾 Speichere die fertigen Particle **immer zusammen mit ihrer Textur** ab. Die Datei sollte auf **`.particle.json`** enden, z.B. `trail.particle.json`.
 
 ---
 
 ## Particle ins Emote/Cosmetic einbinden
 
-### 1. Locator hinzufügen
+Particles und Sounds verwaltest du im Panel **Emote Effects** — es erscheint rechts, sobald du im **Animate**-Modus bist.
 
-Um Particle im Emote oder Cosmetic anzuzeigen, brauchst du einen **Locator**. Diesen kannst du im **Edit Outliner** über **Rechtsklick** hinzufügen.
+![Panel „Emote Effects“ mit einem Particle und einem Sound](images/plugin-effects-panel.png)
 
-![Locator hinzufügen](images/image-24.png)
+### 1. Particle hinzufügen
 
-### 2. Animate Effects Tab öffnen
+1. Playhead in der Timeline an die Stelle schieben, wo der Particle starten soll
+2. Im Panel **Emote Effects** auf **+ Particle**
+3. Deine `.particle.json` auswählen
 
-Danach brauchst du den **Animate Effects Tab** und musst einen **Keyframe in Particle** hinzufügen.
+### 2. Textur verknüpfen
 
-![Animate Effects Tab](images/image-25.png)
+Neben dem Particle siehst du ein Bild-Symbol:
 
-### 3. Particle-Datei verknüpfen
+- 🖼️ **normal** → Textur ist verknüpft
+- 🔴 **rot durchgestrichen** → keine Textur gefunden, Blockbench zeigt einen Platzhalter. Klick drauf und wähle die PNG aus.
 
-Im Keyframe-Panel:
+### 3. Locator wählen
 
-1. Unter **Effect** → die **Particle-Datei** auswählen
-2. Danach die **Textur** auswählen
-3. Direkt darunter den passenden **Locator** auswählen
+Particles brauchen einen **Locator** — sonst erscheinen sie ingame am falschen Ort (oder am falschen Spieler).
 
-![Particle Datei + Locator verknüpfen](images/image-26.png)
+Im Dropdown neben dem Particle:
+
+- einen bestehenden Locator auswählen, **oder**
+- **+ new locator on selected bone** → legt direkt einen Locator am gerade ausgewählten Knochen an
+
+> 💡 Den Locator kannst du danach im **Edit**-Modus im Outliner verschieben, z.B. an die Hand.
 
 ### 4. Testen
 
-Wenn jetzt die Timeline abgespielt wird, sollten die Particle ebenfalls gezeigt werden.
+Leertaste — die Particle werden in der Vorschau mit abgespielt.
+
+### Status-Punkte
+
+| Punkt | Bedeutung |
+|-------|-----------|
+| 🟢 farbig | Datei gefunden, alles gut |
+| ⚪ grau | Keine Datei verknüpft oder Datei nicht mehr da |
+| 🔴 rot | Keyframe hat noch gar keinen Effekt |
+
+> ✅ Beim [Export](10-Export) kopiert das Plugin alle Particle-Dateien und Texturen automatisch mit in den Ordner und setzt die richtigen IDs. Du musst nichts von Hand umbenennen.
 
 ---
 
-← [Molang](07-Molang) · **8 / 12** · [Sound →](09-Sound)
+← [Molang](07-Molang) · **8 / 15** · [Sound →](09-Sound)

@@ -1,46 +1,101 @@
 # 11. Test-Setup
 
-← [Export](10-Export) · **11 / 12** · [Ingame-Test →](12-Ingame-Test)
+← [Export](10-Export) · **11 / 15** · [Ingame-Test →](12-Ingame-Test)
 
 ---
 
-Um alles ingame testen zu können, brauchst du eine **`{name}.norisk.json`** Datei.
+Es gibt zwei Wege, deine Sachen ingame zu sehen:
 
-Du kannst sie entweder **selbst schreiben** oder **aus einer existierenden Datei kopieren** und alle wichtigen Felder anpassen.
+| | **A — Test-Ordner** | **B — Designer-Ordner** |
+|---|---|---|
+| Für wen | **alle** | nur mit **Designer-Rechten** |
+| Ordner | `NoRiskClient/test` | `NoRiskClient/designer` |
+| Was du siehst | Emotes abspielen, Cosmetics tragen | zusätzlich **Shop-Ansicht**, Preise, Kategorien |
+| `.norisk.json` | für Emotes nicht nötig | Pflicht |
+| Neu laden | **automatisch** | `/nrc designer source rescan` |
 
-## Vorbereitung
+Zum Ausprobieren reicht **A**. **B** brauchst du, wenn du sehen willst, wie dein Item im Shop aussieht.
 
-Zuerst kopieren wir die **Game-Assets** — also den gesamten **`nrc-cosmetics` Folder** — in den **`NoRiskClient/designer`** Ordner.
+---
 
-### 📥 Download
+## A — Test-Ordner (für alle)
 
-Den Ordner musst du dir nicht selbst zusammensuchen — wir stellen ihn als ZIP bereit:
+Der Ordner liegt unter `<Minecraft-Ordner>/NoRiskClient/test` und wird vom Client automatisch angelegt. Am schnellsten öffnest du ihn ingame mit:
 
-> **[⬇ nrc-cosmetics.zip herunterladen](https://github.com/NoRiskClient/nrc-designer-docs/releases/latest/download/nrc-cosmetics.zip)** *(ca. 670 KB, immer aktueller Stand)*
+```
+/nrc test folder
+```
 
-> ⚙️ Das ZIP wird **automatisch** aus dem [Source-Repo](https://github.com/NoRiskClient/nrc-designer-docs/tree/main/designer) gebaut. Bei jeder Änderung am Designer-Ordner gibt's ein neues Release — du hast also immer die aktuelle Version. Alle Versionen: [Releases](https://github.com/NoRiskClient/nrc-designer-docs/releases).
+![Chat-Ausgabe von /nrc test folder mit [Open] und [Copy]](images/test-folder-command.png)
 
-**Schritte:**
+### Emotes
+
+Einfach reinziehen — entweder nur die Animation oder den ganzen Export-Ordner:
+
+```
+NoRiskClient/test/
+├── meinemote.animation.json          ← reine Animation
+└── dripstone/                        ← Emote mit Gegenstand, Particle, Sound
+    ├── dripstone.animation.json
+    ├── dripstone.geo.json
+    ├── dripstone.png
+    └── dripstone.ogg
+```
+
+- Ein **Ordner** wird als Emote erkannt, wenn darin eine `<ordnername>.animation.json` liegt.
+- Eine `.norisk.json` brauchst du hier **nicht**.
+
+### Cosmetics
+
+```
+NoRiskClient/test/
+└── meine_wings/
+    ├── meine_wings.norisk.json       ← mit "id"
+    ├── meine_wings.geo.json
+    ├── meine_wings.png
+    └── meine_wings.animation.json
+```
+
+Angezogen wird ein Test-Cosmetic per Command: `/nrc test cosmetic <name>` → [12. Ingame-Test](12-Ingame-Test#a--test-ordner).
+
+### Was der Client prüft
+
+- Namen nur aus **`a-z`, `0-9`, `.`, `_`, `-`** — alles andere wird übersprungen. Der Client sagt dir per Hinweis, welche Datei und warum, und schlägt einen gültigen Namen vor.
+- Files im Ordner heißen **wie der Ordner** (`meine_wings/meine_wings.geo.json`).
+- Particles: alle `*.particle.json` im Ordner werden geladen.
+- Textur-Varianten liegen in einem Unterordner `textures/`.
+
+Änderungen werden **automatisch** neu geladen, sobald du eine Datei speicherst. Weiter geht's in [12. Ingame-Test](12-Ingame-Test#a--test-ordner).
+
+---
+
+## B — Designer-Ordner (mit Designer-Rechten)
+
+### Vorbereitung
+
+Zuerst kopierst du die **Game-Assets** — also den gesamten **`nrc-cosmetics` Folder** — in den **`NoRiskClient/designer`** Ordner.
+
+> **[⬇ nrc-cosmetics.zip herunterladen](https://github.com/NoRiskClient/nrc-designer-docs/releases/latest/download/nrc-cosmetics.zip)**
 
 1. ZIP herunterladen
 2. Entpacken — du erhältst den Ordner `nrc-cosmetics/`
 3. Den **gesamten Ordner** nach `NoRiskClient/designer/` kopieren
 4. Deine eigenen Emote- / Cosmetic-Files an die richtigen Stellen einsortieren (siehe unten)
 
----
+> ⚠️ Der Designer-Modus ersetzt **alle** NRC-Assets durch diesen Ordner. Lass deshalb den kompletten Inhalt aus dem ZIP drin — sonst fehlen Texturen in der UI.
 
-## `{name}.norisk.json` — Emotes
+### `{name}.norisk.json`
 
-Die `.norisk.json` für Emotes ist deutlich übersichtlicher als die für Cosmetics. Du musst vor allem folgendes setzen:
+Im Designer-Ordner braucht **jedes** Emote und Cosmetic eine `.norisk.json`. Am einfachsten lässt du sie vom Plugin erzeugen (**Metadata** im [Export-Dialog](10-Export#metadaten)) und ergänzt danach die fehlenden Felder.
 
-- `id` — eindeutige UUID
-- `name` — Anzeigename
-- `emoteFile` — Pfad zur Animation
-- `creator` — dein Name
-- `category`
-- `price` / `rarity`
+🔧 **UUID-Generator** (falls du eine `id` von Hand brauchst): https://www.uuidgenerator.net/
 
-🔧 **UUID-Generator:** https://www.uuidgenerator.net/
+#### Emotes
+
+Das Plugin schreibt `id`, `name`, `creator`, `price`, `rarity` und `dateAdded`. **Von Hand ergänzen** musst du:
+
+- `emoteFile` — Pfad zur Animation, relativ zum `emotes`-Ordner
+- `category` — Gruppe im Emote-Menü (`SPECIAL`, `RANDOM`, `CLASSIC`, `FUNNY`, `DANCE`)
 
 ```json
 {
@@ -61,11 +116,9 @@ Die `.norisk.json` für Emotes ist deutlich übersichtlicher als die für Cosmet
 
 ![Emote .norisk.json im Editor](images/image-34.png)
 
----
+#### Cosmetics
 
-## `{name}.norisk.json` — Cosmetics
-
-Für Cosmetics wird die Datei länger, da hier zusätzlich **Scale**, **Preview** und Dinge wie das **Shop-Layout** eingestellt werden.
+Für Cosmetics wird die Datei länger, da hier zusätzlich **Scale**, **Preview** und Dinge wie das **Shop-Layout** eingestellt werden. Das Plugin legt alle Felder mit Standardwerten an — `defaultSettings` passt du danach an.
 
 ```json
 {
@@ -92,17 +145,8 @@ Für Cosmetics wird die Datei länger, da hier zusätzlich **Scale**, **Preview*
             "y": -1.0,
             "z": 0.0
         },
-        "adjustRotationWhenSwimmingOrFlying": false,
-        "adjustPositionWhenSkeaking": true,
-        "sneakingPositionOffset": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-        },
-        "renderMode": "ORIGINAL",
-        "hash": null
+        "renderMode": "ORIGINAL"
     },
-    "layers": [],
     "features": [],
     "compatibleCosmetics": [],
     "rarity": "UNCOMMON",
@@ -112,34 +156,53 @@ Für Cosmetics wird die Datei länger, da hier zusätzlich **Scale**, **Preview*
 
 ![Cosmetic .norisk.json im Editor](images/image-35.png)
 
----
+> 📚 Welche `type`-Werte es gibt, steht in [13. Cosmetic-Typen](13-Cosmetic-Typen). Alle weiteren Felder findest du in der [14. Referenz](14-Referenz).
 
-## Files einsortieren
+> 💡 Die richtigen Werte für `offset` findest du am schnellsten ingame mit `/nrc cosmetics designer offset …` → [12. Ingame-Test](12-Ingame-Test#b--designer-ordner).
 
-### Cosmetics
+### Files einsortieren
 
-Die `.norisk.json` für Cosmetics kommt in **denselben Ordner** wie die restlichen Files.
+#### Cosmetics
+
+Den ganzen Export-Ordner (inklusive `.norisk.json`) in den passenden Cosmetic-Ordner legen. Als `path` steht der Ordnername in der `.norisk.json` — entscheidend ist aber, dass **alle Files gleich heißen wie die `.norisk.json`**.
 
 ![Cosmetic Folder Layout](images/image-36.png)
-
-Der gesamte Ordner wandert in den passenden ingame Ordner — der Pfad muss zum `path`-Feld in deiner `.norisk.json` passen:
 
 ![Ingame Cosmetic-Ordner 1](images/image-37.png)
 
 ![Ingame Cosmetic-Ordner 2](images/image-38.png)
 
-### Emotes
+#### Emotes
 
-Für Emotes hast du **zwei verschiedene Dateien**:
+Für Emotes landen die Files an **zwei Stellen**:
 
 **1. Die `.norisk.json`** — kommt in den `shop/emotes` Ordner:
 
 ![shop/emotes Ordner](images/image-39.png)
 
-**2. Die `.animation.json`** (oder je nach Emote der ganze Ordner mit `.geo` / `.animation` / `.png` / Particle / Sound etc.) — kommt in den `emotes` Ordner:
+**2. Die `.animation.json`** (oder bei Emotes mit Gegenstand der ganze Ordner mit `.geo` / `.animation` / `.png` / Particle / Sound) — kommt in den `emotes` Ordner:
 
 ![emotes Ordner](images/image-40.png)
 
 ---
 
-← [Export](10-Export) · **11 / 12** · [Ingame-Test →](12-Ingame-Test)
+## Namensregeln (für beide Wege)
+
+Der Client findet deine Files **nur über den Dateinamen**. Das Plugin hält sich beim Export automatisch daran — wenn du von Hand umbenennst, achte darauf:
+
+| Regel | Beispiel |
+|-------|----------|
+| Model, Textur und Animation heißen **genau wie der Ordner / die `.norisk.json`** | `wings.norisk.json` → `wings.geo.json`, `wings.png`, `wings.animation.json` |
+| Nur **Kleinbuchstaben**, Ziffern, `_`, `-` und `.` | ✅ `pride_wings` · ❌ `PrideWings` |
+| Emote mit Gegenstand: Ordner und Files heißen gleich, `.geo.json` **und** `.png` sind beide Pflicht | `emotes/dripstone/dripstone.animation.json`, `dripstone.geo.json`, `dripstone.png` |
+| Particles: alle `*.particle.json` im Ordner werden geladen | `banhammer/trail.particle.json` |
+| Textur-Varianten liegen in `textures/` und brauchen `"multiTexture": true` | `wings/textures/red.png`, `wings/textures/blue.png` |
+| Übersetzungen kommen nach `lang/<sprache>.json`, neu laden mit **F3+T** (nur Designer-Ordner) | `lang/de_de.json` |
+
+> ⚠️ **Kein Ordnername darf der Anfang eines anderen sein** — z.B. `hat` und `hat2` nebeneinander. Sonst lädt `hat` auch die Particles von `hat2`. Lieber `hat_red` und `hat_blue`.
+
+> ⚠️ Jede `id` darf **nur einmal** vorkommen. Bei doppelten IDs gewinnt einfach eine der Dateien — ohne Fehlermeldung.
+
+---
+
+← [Export](10-Export) · **11 / 15** · [Ingame-Test →](12-Ingame-Test)

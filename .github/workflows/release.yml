@@ -39,8 +39,8 @@ jobs:
 
             ## Assets
 
-            - **`nrc-cosmetics.zip`** — Designer-Template-Ordner. ZIP entpacken und den `nrc-cosmetics/` Folder nach `NoRiskClient/designer/` kopieren.
-            - **`nrc_default_emote_model.bbmodel`** — Blockbench-Template (erst nach GeckoLib-Plugin-Install öffnen).
+            - **`nrc-cosmetics.zip`** — Designer-Ordner. ZIP entpacken und den `nrc-cosmetics/` Folder nach `NoRiskClient/designer/` kopieren (nur mit Designer-Rechten). Das Blockbench-Plugin lädt hieraus auch seine Emote-Vorlagen.
+            - **`nrc_default_emote_model.bbmodel`** — altes Blockbench-Template (nicht mehr nötig, das Rig kommt jetzt aus dem NRC-Plugin).
 
             ## Doku
 

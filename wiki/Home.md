@@ -20,8 +20,8 @@ Bevor du loslegst, brauchst du folgende Tools:
 
 | Tool | Pflicht | Zweck |
 |------|---------|-------|
-| [Blockbench](https://www.blockbench.net/) | ✅ | 3D-Modeling, Texturen, Animationen |
-| [GeckoLib Plugin](https://github.com/bernie-g/geckolib/wiki/Molang) | ✅ | Export-Format für NRC Cosmetics & Emotes |
+| [Blockbench](https://www.blockbench.net/) (Desktop) | ✅ | 3D-Modeling, Texturen, Animationen |
+| [NRC-Plugin](01-Grundlagen#nrc-plugin-installieren) | ✅ | Spieler-Rig, Emote-Einstellungen & Export für NRC |
 | [Snowstorm](https://snowstorm.app/) | optional | Particle-Effekte |
 | [Audacity](https://www.audacityteam.org/) | optional | Sound-Bearbeitung (Mono `.ogg`) |
 
@@ -43,15 +43,16 @@ Grundlagen → Aufbau → Model → Texture → Animation → Keyframes → Mola
 
 | Datei | Download |
 |-------|----------|
-| **Designer-Ordner zum Testen** | [⬇ nrc-cosmetics.zip](https://github.com/NoRiskClient/nrc-designer-docs/releases/latest/download/nrc-cosmetics.zip) |
-| **Blockbench-Template** | [⬇ nrc_default_emote_model.bbmodel](https://github.com/NoRiskClient/nrc-designer-docs/releases/latest/download/nrc_default_emote_model.bbmodel) |
+| **NRC-Plugin** (Link für *Load Plugin from URL*) | `https://raw.githubusercontent.com/NoRiskClient/nrc-blockbench-plugins/master/plugins/nrc_cosmetics/nrc_cosmetics.js` |
+| **Designer-Ordner** (nur mit Designer-Rechten) | [⬇ nrc-cosmetics.zip](https://github.com/NoRiskClient/nrc-designer-docs/releases/latest/download/nrc-cosmetics.zip) |
+| Altes Blockbench-Template *(nicht mehr nötig)* | [⬇ nrc_default_emote_model.bbmodel](https://github.com/NoRiskClient/nrc-designer-docs/releases/latest/download/nrc_default_emote_model.bbmodel) |
 
-Beide Files werden **automatisch** aus dem [Source-Repo](https://github.com/NoRiskClient/nrc-designer-docs) gebaut — bei jeder Änderung gibt's ein neues Release. Alle Versionen: [Releases](https://github.com/NoRiskClient/nrc-designer-docs/releases).
+Die Release-Files werden **automatisch** aus dem [Source-Repo](https://github.com/NoRiskClient/nrc-designer-docs) gebaut — bei jeder Änderung gibt's ein neues Release. Alle Versionen: [Releases](https://github.com/NoRiskClient/nrc-designer-docs/releases).
 
 ### Kapitel
 
-1. **[Grundlagen](01-Grundlagen)** — Blockbench, GeckoLib & NRC Default Template installieren
-2. **[Aufbau](02-Aufbau)** — Das 7-Knochen-System verstehen
+1. **[Grundlagen](01-Grundlagen)** — Blockbench & NRC-Plugin installieren, neues Projekt
+2. **[Aufbau](02-Aufbau)** — Das Knochen-System verstehen
 3. **[Model](03-Model)** — Cubes & UVs richtig setzen
 4. **[Texture](04-Texture)** — Style-Guide (16x / 32x)
 5. **[Animation](05-Animation)** — Animation erstellen, Loop-Modi, Timeline
@@ -59,9 +60,15 @@ Beide Files werden **automatisch** aus dem [Source-Repo](https://github.com/NoRi
 7. **[Molang](07-Molang)** — Funktionen für Idle-Loops & Endzustände
 8. **[Particle](08-Particle)** — Snowstorm-Particle einbinden
 9. **[Sound](09-Sound)** — Mono-OGGs mit Audacity vorbereiten
-10. **[Export](10-Export)** — GeckoLib-Export für Emotes & Cosmetics
-11. **[Test-Setup](11-Test-Setup)** — `.norisk.json` schreiben & Files einsortieren
-12. **[Ingame-Test](12-Ingame-Test)** — Designer-Commands & Live-Preview
+10. **[Export](10-Export)** — Export mit dem NRC-Plugin
+11. **[Test-Setup](11-Test-Setup)** — Test-Ordner (für alle) oder Designer-Ordner
+12. **[Ingame-Test](12-Ingame-Test)** — `/nrc test` & Designer-Commands
+
+### Nachschlagen
+
+13. **[Cosmetic-Typen](13-Cosmetic-Typen)** — Alle Typen, wo sie sitzen & Buddys
+14. **[Referenz](14-Referenz)** — Alle Felder der `.norisk.json` & Emote-Einstellungen
+15. **[Blockbench-Plugin](15-Blockbench-Plugin)** — Alle Plugin-Funktionen auf einen Blick
 
 ---
 

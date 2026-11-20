@@ -1,6 +1,6 @@
 # 9. Sound
 
-← [Particle](08-Particle) · **9 / 12** · [Export →](10-Export)
+← [Particle](08-Particle) · **9 / 15** · [Export →](10-Export)
 
 ---
 
@@ -25,20 +25,22 @@ Beides kannst du einfach in **Audacity** einstellen.
 
 ## Sound im Modell einbinden
 
-### 1. Animate Effects Tab
+1. In den **Animate**-Modus wechseln
+2. Playhead an die Stelle schieben, wo der Sound starten soll
+3. Im Panel **Emote Effects** auf **+ Sound**
+4. Deine `.ogg` auswählen — der Sound erscheint in der Liste und in der Timeline
 
-Wie bei [Particle](08-Particle), aber dieses Mal den **Sounds**-Tab statt Particle nutzen.
+![Sound im Panel „Emote Effects“ + in der Timeline](images/plugin-effects-sound.png)
 
-![Animate Effects → Sounds](images/image-25.png)
+Die Sound-ID setzt das Plugin automatisch (`noriskclient-cosmetics:emotes/<emote>/<sound>`). Benennst du das Emote später um (**File → Rename NoRisk Client Emote**), werden die IDs mit angepasst.
 
-### 2. Sound-Datei verknüpfen
+## Vanilla-Sounds
 
-Die Sound-Datei kann ganz einfach unter **Effect** hinzugefügt werden — danach erscheint sie in der Timeline.
+Du kannst auch Sounds aus Minecraft selbst benutzen. Trag dafür im Keyframe als **Effect** den Namen des Sound-Events ein, z.B. `entity.cat.ambient`.
 
-![Sound Effect hinzufügen](images/image-29.png)
-
-![Sound in Timeline](images/image-30.png)
+- Hast du Minecraft installiert, findet das Plugin den Sound in deinen lokalen Minecraft-Dateien. Mit ▶️ neben dem Eintrag hörst du ihn direkt in Blockbench.
+- Vanilla-Sounds werden **nicht** mitexportiert — der Client hat sie ja schon.
 
 ---
 
-← [Particle](08-Particle) · **9 / 12** · [Export →](10-Export)
+← [Particle](08-Particle) · **9 / 15** · [Export →](10-Export)

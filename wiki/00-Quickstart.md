@@ -4,49 +4,57 @@
 
 Erster Emote ingame in 5 Minuten. Keine Theorie — wenn du verstehen willst **warum**, siehe [Kapitel 1](01-Grundlagen).
 
+> 💡 Für den Quickstart brauchst du **keine** Designer-Rechte. Jeder kann über den **Test-Ordner** testen.
+
 ---
 
 ## 1. Tools
 
-- [Blockbench](https://www.blockbench.net/) installieren
-- In Blockbench: **File → Plugins → GeckoLib Models & Animations → Install**
+- [Blockbench](https://www.blockbench.net/) (Desktop-Version) installieren
+- In Blockbench: **File → Plugins → Load Plugin from URL** → diesen Link einfügen:
 
-## 2. Template öffnen
+```
+https://raw.githubusercontent.com/NoRiskClient/nrc-blockbench-plugins/master/plugins/nrc_cosmetics/nrc_cosmetics.js
+```
 
-[nrc_default_emote_model.bbmodel](https://github.com/NoRiskClient/nrc-designer-docs/releases/latest/download/nrc_default_emote_model.bbmodel) herunterladen → Doppelklick.
+Details: [1. Grundlagen](01-Grundlagen#nrc-plugin-installieren)
 
-*(Erst nach GeckoLib-Install öffnen.)*
+## 2. Neues Emote
+
+1. **File → New → NoRisk Client Emote**
+2. **Blank Emote** wählen (oder eine Vorlage)
+3. Namen eingeben, z.B. `meinerstemote` → das Rig mit Spieler-Skelett ist sofort da
 
 ## 3. Animation bauen
 
-1. Oben rechts: **Animate** Mode
-2. Links auf **+** → Name z.B. `meinerstemote` → **Confirm**
-3. Bone im Outliner anklicken (z.B. `armorRightArm`)
-4. Playhead in der Timeline verschieben → Bone drehen/verschieben → Keyframe entsteht automatisch
-5. 2–3 Keyframes reichen. **Leertaste** für Preview.
+1. Oben rechts in den **Animate**-Modus wechseln — die Animation `meinerstemote` ist schon angelegt
+2. Bone im Outliner anklicken (z.B. `bipedRightArm`)
+3. Playhead in der Timeline verschieben → Bone drehen/verschieben → Keyframe entsteht automatisch
+4. 2–3 Keyframes reichen. **Leertaste** für Preview.
 
 ## 4. Exportieren
 
-**File → Export → Export GeckoLib Animations** → speichern als `meinerstemote.animation.json`.
+**File → Export → Export NoRisk Client Emote** → Ordner wählen → **Confirm**.
+
+Das Plugin legt einen Ordner `meinerstemote/` mit `meinerstemote.animation.json` an.
 
 ## 5. Ingame abspielen
 
-**Einmalig:** [nrc-cosmetics.zip](https://github.com/NoRiskClient/nrc-designer-docs/releases/latest/download/nrc-cosmetics.zip) entpacken, Ordner `nrc-cosmetics/` nach `<MC-Ordner>/NoRiskClient/designer/` kopieren.
+**Minecraft mit NoRiskClient starten, dann Chat:**
 
-**Deine Animation** nach:
 ```
-NoRiskClient/designer/nrc-cosmetics/assets/noriskclient-cosmetics/emotes/
-```
-
-**Minecraft starten, dann Chat:**
-```
-/nrc designer source toggle
-/nrc emote play meinerstemote
+/nrc test folder
 ```
 
-Fertig.
+Öffnet den Test-Ordner. Zieh deinen `meinerstemote/`-Ordner (oder nur die `.animation.json`) hinein. Der Client lädt ihn automatisch.
 
-> Eine `.norisk.json` brauchst du **nur** wenn der Emote auch im Shop auftauchen soll — fürs lokale Abspielen reicht die Animation-Datei. Details in [11. Test-Setup](11-Test-Setup).
+```
+/nrc test emote meinerstemote
+```
+
+Fertig. Nochmal den gleichen Command → Emote stoppt.
+
+> 👀 Was im Test-Ordner liegt, siehst **nur du**.
 
 ---
 
@@ -54,9 +62,10 @@ Fertig.
 
 | Problem | Lösung |
 |---------|--------|
-| Command `designer source` existiert nicht | Keine Designer-Permission → [Discord-Ticket](https://discord.com/channels/774271756549619722) |
-| `emote play` findet Datei nicht | Animation-Name im Command muss zum Dateinamen passen (ohne `.animation.json`) |
-| Crash beim Template öffnen | GeckoLib nicht installiert — Blockbench neu starten |
+| `File → New` zeigt kein *NoRisk Client Emote* | Plugin nicht geladen — [Installation](01-Grundlagen#nrc-plugin-installieren) wiederholen, Blockbench neu starten |
+| `/nrc test emote` findet das Emote nicht | `/nrc test` eingeben — zeigt alles, was erkannt wurde, und warum etwas übersprungen wurde |
+| Datei wird übersprungen | Name darf nur `a-z`, `0-9`, `.`, `_`, `-` enthalten — keine Großbuchstaben, keine Leerzeichen |
+| Änderung kommt nicht an | `/nrc test reload` |
 
 ---
 

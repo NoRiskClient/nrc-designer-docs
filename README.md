@@ -4,8 +4,6 @@
 
 Komplette Doku zum Erstellen eigener **Emotes** & **Cosmetics** für **NoRiskClient** — von Blockbench und unserem eigenen Plugin bis zum Ingame-Test.
 
-> 🚫 **Keine KI:** Cosmetics und Emotes mit KI zu erstellen ist verboten und wird nicht geduldet. Diese Arbeit soll Handarbeit bleiben.
-
 ## 📖 → [Zum Wiki](https://github.com/NoRiskClient/nrc-designer-docs/wiki)
 
 Alle Inhalte (15 Kapitel, Screenshots, Beispiel-GIFs) liegen im Wiki dieses Repos.

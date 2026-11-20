@@ -8,14 +8,6 @@ Wenn ihr offene Fragen habt oder allgemein was wissen wollt, könnt ihr auch ger
 
 ---
 
-## 🚫 Keine KI
-
-Das Erstellen von Cosmetics und Emotes mit **KI ist verboten** — das gilt für Modelle, Texturen, Animationen und Sounds.
-
-Uns ist wichtig, dass diese Arbeit **Handarbeit** bleibt. Jedes Cosmetic und jedes Emote im NRC-Shop soll von einem Menschen gemacht sein — mit eigener Idee, eigenem Style und eigener Mühe.
-
----
-
 ## Komplett neu hier?
 
 → **[Quickstart](00-Quickstart)** — erster Emote ingame in 5 Minuten, ohne Theorie. Danach kannst du mit den Kapiteln unten tiefer einsteigen.

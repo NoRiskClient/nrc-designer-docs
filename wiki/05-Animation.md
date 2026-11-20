@@ -32,15 +32,9 @@ Bei Emotes stellst du über **Animation → Edit NoRisk Client Emote Settings** 
 | Animation | Wird gespielt, wenn der Spieler … |
 |-----------|-----------------------------------|
 | `nrc.crawling` | kriecht |
-| `nrc.swimmidle` | im Wasser ist, aber nicht schwimmt |
 | `nrc.swimming` | schwimmt |
-| `nrc.flying` | fliegt (z.B. Elytra) |
-| `nrc.jumping` | nach oben springt |
-| `nrc.falling` | fällt |
-| `nrc.afk` | AFK ist |
-| `nrc.sitting` | sitzt |
+| `nrc.flying` | mit der Elytra fliegt |
 | `nrc.sneaking` | schleicht |
-| `nrc.running` | sprintet |
 | `nrc.walking` | läuft |
 | `nrc.quirk_1` … `nrc.quirk_4` | still steht — zufällige Extra-Animation zwischendurch |
 | `nrc.idle` | nichts von alledem tut |
@@ -48,7 +42,9 @@ Bei Emotes stellst du über **Animation → Edit NoRisk Client Emote Settings** 
 
 Die Liste (ohne `nrc.shop`) ist gleichzeitig die **Reihenfolge**: trifft mehreres zu, gewinnt das obere. Fehlt eine Animation, wird sie einfach übersprungen — am Ende landet der Client immer bei `nrc.idle`.
 
-> 💡 Wie oft die Quirks kommen, stellst du in der `.norisk.json` unter `animationSettings` ein → [Referenz](14-Referenz#quirks-animationsettings).
+> ℹ️ [Buddys](13-Cosmetic-Typen#buddys) kennen zusätzliche Animationen (`nrc.running`, `nrc.sitting`, `nrc.afk`, `nrc.jumping`, `nrc.falling`, `nrc.swimmidle`). Bei allen anderen Cosmetics werden diese **nicht** abgespielt.
+
+> 💡 Welcher Quirk wie oft und in welchem Abstand kommt, stellst du in der `.norisk.json` unter `animationSettings` ein → [Referenz](14-Referenz#quirks-animationsettings).
 
 ## Loop-Modi
 

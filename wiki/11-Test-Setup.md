@@ -75,7 +75,7 @@ Angezogen wird ein Test-Cosmetic per Command: `/nrc test cosmetic <name>` → [1
 
 Zuerst kopierst du die **Game-Assets** — also den gesamten **`nrc-cosmetics` Folder** — in den **`NoRiskClient/designer`** Ordner.
 
-> **[⬇ nrc-cosmetics.zip herunterladen](https://github.com/NoRiskClient/nrc-designer-docs/releases/latest/download/nrc-cosmetics.zip)** *(nicht mehr aktuell)*
+> **[⬇ nrc-cosmetics.zip herunterladen](https://github.com/NoRiskClient/nrc-designer-docs/releases/latest/download/nrc-cosmetics.zip)**
 
 1. ZIP herunterladen
 2. Entpacken — du erhältst den Ordner `nrc-cosmetics/`

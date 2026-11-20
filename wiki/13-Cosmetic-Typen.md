@@ -39,7 +39,7 @@ Ein **Buddy** ist kein Teil des Spielers, sondern eine **eigene kleine Figur**, 
 
 ### Modell
 
-- Der Buddy steht **frei auf dem Boden** und bewegt sich nicht mit dem Spieler. Alle Cubes kommen deshalb in den Knochen **`armorBuddy`**. Den gibt es im Plugin-Rig nicht — leg dir eine Gruppe mit genau diesem Namen an. Cubes außerhalb von `armorBuddy` zählen nicht zur Größe — liegt gar nichts darin, wird der Buddy **nicht angezeigt**.
+- Der Buddy steht **frei auf dem Boden** und bewegt sich nicht mit dem Spieler. Alle Cubes kommen deshalb in einen eigenen Knochen, dessen Name mit `armor` beginnt — wir nehmen dafür **`armorBuddy`**. Den gibt es im Plugin-Rig nicht, leg dir die Gruppe selbst an. Cubes außerhalb eines `armor…`-Knochens zählen nicht zur Größe — liegt gar nichts darin, wird der Buddy **nicht angezeigt**.
 - Die Füße gehören auf **Höhe 0**. Schwebt das Modell darüber, schwebt der Buddy auch ingame.
 - Die Größe des Modells ist gleichzeitig seine **Hitbox**: daraus berechnet der Client, wo der Buddy hinpasst, wo sein Schatten liegt und wo der Name erscheint. Lange Gegenstände (Schwerter, Schläger …) machen die Hitbox mit größer.
 

@@ -6,8 +6,6 @@
 
 Bevor du loslegst, brauchst du **Blockbench** und unser eigenes Plugin **NoRisk Client Cosmetics**. Das Plugin bringt das Spieler-Rig, die Emote-Einstellungen und den Export mit — ein extra Template oder GeckoLib brauchst du nicht mehr.
 
-> 🚫 **Keine KI:** Cosmetics und Emotes mit KI zu erstellen ist **verboten** — egal ob Modell, Textur, Animation oder Sound. Wir dulden das nicht und legen Wert darauf, dass diese Arbeit **Handarbeit** bleibt. → [Home](Home#-keine-ki)
-
 ## Blockbench
 
 Blockbench ist ein kostenloses Open-Source 3D-Modeling-Programm, das unter anderem auch von Minecraft selbst benutzt wird. Nimm die **Desktop-Version** — in der WebApp kann das Plugin keine Ordner schreiben, Texturen und Sounds werden dort nicht exportiert.

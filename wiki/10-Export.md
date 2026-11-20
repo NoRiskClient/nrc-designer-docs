@@ -40,7 +40,7 @@ Ist **Animation** an, siehst du darunter die [Emote-Einstellungen](14-Referenz#e
 Ist **Metadata** an, füllst du aus:
 
 - **Creator** — dein Name
-- **Price** — Preis in Coins (Irrelevant)
+- **Price** — Preis in Coins
 - **Category** — nur bei Cosmetics: der [Typ](13-Cosmetic-Typen) (`HAT`, `WINGS` …)
 - **Rarity** — `COMMON` bis `LEGENDARY`
 

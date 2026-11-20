@@ -40,7 +40,7 @@ Zum Nachschlagen: alle Felder der `.norisk.json`, die Extra-Einstellungen in der
 | `supportedBones` ✏️ | Liste | `armor`-Knochen, in denen Cubes liegen — das Plugin trägt sie automatisch ein |
 | `defaultSettings` ✏️ | Objekt | Größe, Position, Vorschau → [unten](#defaultsettings) |
 | `features` ✏️ | Liste | Regler für Spieler → [unten](#features--regler) |
-| `layers` ✏️ | Liste | `GLOW`, `COLOR`, `COLOR_AND_GLOW` → [Glow](04-Texture#glow-leuchtende-pixel) / [Color Change](04-Texture#color-change-farbe-wechseln) |
+| `layers` ✏️ | Liste | `GLOW`, `COLOR`, `COLOR_AND_GLOW` |
 | `compatibleCosmetics` ✏️ | Liste von IDs | Cosmetics, die zusammen getragen werden dürfen |
 | `blacklistCosmetics` | Liste von IDs | Cosmetics, die **nicht** zusammen getragen werden dürfen |
 | `multiTexture` | true/false | Textur-Varianten aus dem Unterordner `textures/` anbieten → [Mehrere Texturen](04-Texture#mehrere-texturen-multitexture) |
@@ -78,17 +78,25 @@ Mit `features` stellen Spieler im Wardrobe per Regler Größe oder Position selb
 
 ### Quirks (`animationSettings`)
 
-Steuert, wie oft die einzelnen Quirk-Animationen (`nrc.quirk_1` … `nrc.quirk_4`, siehe [5. Animation](05-Animation#animationsnamen-für-cosmetics)) gewählt werden. Pro Quirk gibst du eine `probability` an — das ist eine **Gewichtung**: höhere Zahl = kommt öfter.
+Steuert die Quirk-Animationen (`nrc.quirk_1` … `nrc.quirk_4`, siehe [5. Animation](05-Animation#animationsnamen-für-cosmetics)). Pro Quirk gibt es zwei Werte:
+
+| Feld | Standard | Wirkung |
+|------|----------|---------|
+| `probability` | `1` | **Gewichtung** bei der Auswahl: höhere Zahl = dieser Quirk wird öfter genommen |
+| `timeRange` | 1 – 15 Sekunden | Wartezeit, bevor der Quirk startet — zufällig zwischen `start` und `endInclusive` |
 
 ```json
 "animationSettings": {
-  "nrc.quirk_1": { "probability": 2 },
+  "nrc.quirk_1": {
+    "probability": 2,
+    "timeRange": { "start": "PT5S", "endInclusive": "PT20S" }
+  },
   "nrc.quirk_2": { "probability": 1 },
   "nrc.quirk_3": { "probability": 1 }
 }
 ```
 
-Hier kommt `nrc.quirk_1` doppelt so oft wie `nrc.quirk_2` oder `nrc.quirk_3`.
+Hier wird `nrc.quirk_1` doppelt so oft gewählt wie `nrc.quirk_2` oder `nrc.quirk_3` und startet nach 5 bis 20 Sekunden Stillstand. Zeiten schreibst du als `PT<sekunden>S`, z.B. `PT30S`.
 
 ---
 
@@ -148,8 +156,9 @@ Den Loop-Modus (`loop`) nimmt das Plugin direkt aus Blockbench (Play Once / Loop
 | `armorRightBoot`, `armorLeftBoot` | Füße, z.B. für `SHOES` |
 | `armorRightArmSlim`, `armorLeftArmSlim` | Arme bei schmalen Skins (Alex) |
 | `armorBuddy` | Alle Cubes eines [Buddys](13-Cosmetic-Typen#buddys) — nicht im Plugin-Rig, selbst anlegen |
-
-| `rig2` (Kopie des Rigs) | Mitspieler bei [interaktiven Emotes](#interaktive-emotes) |
+| `bipedRig2`, `bipedRig3` … (Kopien des Rigs) | Mitspieler bei [interaktiven Emotes](#interaktive-emotes) |
+| `tint_<nummer>` / `tint_<nummer>_<name>` | Färbbare Cubes → [Color Change](04-Texture#color-change-farbe-wechseln) |
+| `glow_<nummer>` | Leuchtende Cubes → [Glow](04-Texture#ganze-teile-leuchten-lassen) |
 
 ### Eigene Knochen außerhalb des Rigs
 
@@ -163,17 +172,18 @@ Ordner **außerhalb** des Spieler-Rigs (z.B. für Gegenstände oder Terrain bei 
 
 ## Interaktive Emotes
 
-Interaktive Emotes (Multi-Emotes) spielen **zwei Spieler zusammen** — z.B. Handschlag oder Umarmung. In der `.norisk.json` steht dafür `"multiEmote": true`.
+Interaktive Emotes (Multi-Emotes) spielen **mehrere Spieler zusammen** — z.B. Handschlag oder Umarmung. In der `.norisk.json` steht dafür `"multiEmote": true`.
 
 ### Aufbau
 
-1. **Rig duplizieren:** Das komplette Spieler-Rig im Emote kopieren — das zweite Rig ist der Mitspieler (`rig2`).
+1. **Rig duplizieren:** Das komplette Spieler-Rig im Emote kopieren — das zweite Rig ist der Mitspieler. Seine Wurzel muss **`bipedRig2`** heißen (bei einem dritten Spieler `bipedRig3` usw.).
 2. Animationen nach diesem Schema anlegen:
 
 | Animation | Wann | Inhalt |
 |-----------|------|--------|
-| `nrc.emote.idle` | Der Spieler startet das Emote und **wartet** auf einen Mitspieler | Nur der erste Spieler bewegt sich. **`rig2` auf Scale `0`** setzen, damit er nicht zu sehen ist. |
+| `nrc.emote.idle` | Der Spieler startet das Emote und **wartet** auf einen Mitspieler | Nur der erste Spieler bewegt sich. **`bipedRig2` auf Scale `0`** setzen, damit er nicht zu sehen ist. |
 | `nrc.emote.interaction` | Ein Mitspieler macht mit | **Beide Rigs** sind zu sehen und spielen die gemeinsame Animation. |
+| `nrc.emote.interaction2`, `nrc.emote.interaction3` … | Zwei, drei … Mitspieler machen mit | Wie `interaction`, mit entsprechend vielen Rigs. |
 | `nrc.emote.random`, `nrc.emote.random2` … | statt `interaction` | Mehrere Varianten — bei jeder Interaktion wird **zufällig eine** davon genommen. |
 
 Du brauchst also **entweder** `nrc.emote.interaction` **oder** beliebig viele `nrc.emote.random…`.
